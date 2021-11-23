@@ -1,7 +1,7 @@
 const RequestMiddleware = require('./lib/RequestMiddleware');
 const ResponseMiddleware = require('./lib/ResponseMiddleware');
 
-const cassettes = {}
+const cassettes = {};
 
 function mountCassette(cassettePath) {
   const axios = require('axios');
@@ -19,7 +19,7 @@ function mountCassette(cassettePath) {
   cassettes[cassettePath] = {
     responseInterceptor: responseInterceptor,
     requestInterceptor: requestInterceptor,
-    axios: axios
+    axios: axios,
   };
 }
 
@@ -35,5 +35,5 @@ module.exports = {
   mountCassette: mountCassette,
   ejectCassette: ejectCassette,
   RequestMiddleware: RequestMiddleware,
-  ResponseMiddleware: ResponseMiddleware
-}
+  ResponseMiddleware: ResponseMiddleware,
+};
